@@ -107,9 +107,8 @@ spec:
       - name: frontend
         image: vigneshwaranbalamurugan/frontend:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 3000  # Container's internal port
 ---
-# Frontend Service
 apiVersion: v1
 kind: Service
 metadata:
@@ -118,8 +117,12 @@ spec:
   selector:
     app: frontend
   ports:
-  - port: 3000
-    targetPort: 3000
+    - protocol: TCP
+      port: 3000       # Internal port within Kubernetes cluster
+      targetPort: 3000 # The target port for containers
+      nodePort: 30080  # Expose externally at NodePort
+  type: NodePort
+
 ---
 # Ingress for external access
 apiVersion: networking.k8s.io/v1
