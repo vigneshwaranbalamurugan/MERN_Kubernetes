@@ -28,7 +28,22 @@ git clone https://github.com/vigneshwaranbalamurugan/MERN_Kubernetes.git
 cd MERN_Kubernetes
 ```
 
-### 2. Build and Push Docker Images
+### 2. Configure Environment Variables
+
+Create a `.env` file in the backend directory with the necessary environment variables:
+
+```bash
+cd backend
+cp .env.example .env
+# Edit the .env file with your specific configuration values
+# Example:
+# MONGODB_URI=mongodb://mongodb-service:27017/kubemern
+# JWT_SECRET=your_jwt_secret
+# NODE_ENV=production
+```
+
+
+### 3. Build and Push Docker Images
 
 ```bash
 # Build and push the backend image
@@ -42,7 +57,7 @@ docker build -t your-docker-username/kubemern-frontend:latest .
 docker push your-docker-username/kubemern-frontend:latest
 ```
 
-### 3. Update Kubernetes Configuration
+### 4. Update Kubernetes Configuration
 
 Update the image names in the Kubernetes deployment files to match your Docker Hub username:
 
@@ -54,7 +69,7 @@ Update the image names in the Kubernetes deployment files to match your Docker H
 # Change image: your-docker-username/kubemern-backend:latest
 ```
 
-### 4. Deploy to Kubernetes
+### 5. Deploy to Kubernetes
 
 ```bash
 # Navigate to the kubernetes directory
@@ -109,3 +124,5 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to access t
                             └──────────────────┘
 ```
 Made with ❤️ by [Vigneshwaran Balamurugan](https://linkedin.com/in/vigneshwaran30)
+
+
