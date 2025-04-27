@@ -37,9 +37,8 @@ cd backend
 cp .env.example .env
 # Edit the .env file with your specific configuration values
 # Example:
-# MONGODB_URI=mongodb://mongodb-service:27017/kubemern
-# JWT_SECRET=your_jwt_secret
-# NODE_ENV=production
+#PORT="5000"
+# MONGO_URI=mongodb://mongodb-service:27017/kubemern
 ```
 
 
