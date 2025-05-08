@@ -82,7 +82,7 @@ const TodoApp = () => {
           <div className="p-6 border-b border-gray-700 flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Sparkles className="text-indigo-400" size={24} />
-              <h1 className="text-2xl font-bold">Quantum Tasks</h1>
+              {/* <h1 className="text-2xl font-bold">Quantum Tasks</h1> */}
             </div>
             <button 
               onClick={toggleTheme} 
