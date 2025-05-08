@@ -1,0 +1,15 @@
+name: Deploy to Jenkins
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Jenkins Deployment
+        run: |
+          curl -X POST "http://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}@<jenkins-server>:8080/job/deploy-mern/build?token=deploy123"
