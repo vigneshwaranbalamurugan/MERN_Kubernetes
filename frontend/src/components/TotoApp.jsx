@@ -88,6 +88,7 @@ const TodoApp = () => {
               onClick={toggleTheme} 
               className="rounded-full p-2 bg-opacity-20 bg-gray-600 hover:bg-opacity-30 transition-all"
             >
+            
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
           </div>
